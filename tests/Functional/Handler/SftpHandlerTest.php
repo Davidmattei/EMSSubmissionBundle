@@ -124,9 +124,8 @@ final class SftpHandlerTest extends AbstractHandlerTest
         /** @var SftpHandleResponse $handleResponse */
         $handleResponse = $this->handle($this->createFormUploadFiles(), $endpoint, $message);
 
-        $this->assertEquals(
-            '{"status":"error","data":"Submission failed, contact your admin. (Could not login with username: , host: 127.0.0.1)"}',
-            $handleResponse->getResponse()
-        );
+        $response = \json_decode($handleResponse->getResponse(), true);
+        $this->assertEquals('error', $response['status']);
+        $this->assertStringContainsString('Submission failed, contact your admin.', $response['data']);
     }
 }

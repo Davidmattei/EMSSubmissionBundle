@@ -24,6 +24,7 @@
     </filter>
 
     <extensions>
-        <extension class="EMS\SubmissionBundle\Tests\Functional\App\ClearLogCacheListener"></extension>
+        <extension class="EMS\SubmissionBundle\Tests\Functional\App\ClearLogCacheListener"/>
+        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension" />
     </extensions>
 </phpunit>

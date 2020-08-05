@@ -1,0 +1,16 @@
+doctrine:
+  dbal:
+    url: 'sqlite:///%kernel.project_dir%/Functional/App/database.db'
+  orm:
+    auto_generate_proxy_classes: '%kernel.debug%'
+    naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+    auto_mapping: true
+
+liip_test_fixtures:
+  cache_db:
+    sqlite: liip_test_fixtures.services_database_backup.sqlite
+
+dama_doctrine_test:
+  enable_static_connection: true
+  enable_static_meta_data_cache: true
+  enable_static_query_cache: true
